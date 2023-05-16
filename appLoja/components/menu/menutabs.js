@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons/";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import GerenciarProdutos from "../../components/Produtos/gerenciarproduto";
 
 //import LinearGradient from 'react-native-linear-gradient';
 
@@ -23,12 +24,8 @@ function ListScreen() {
   );
 }
 
-function PostScreen() {
-  return (
-    <View style={styles.container}>
-      <Text></Text>
-    </View>
-  );
+function ProdutosScreen() {
+  return <GerenciarProdutos />;
 }
 
 function NotificationsScreen() {
@@ -78,7 +75,7 @@ export default function MenuTabs() {
 
         <Tab.Screen
           name="Produtos"
-          component={PostScreen}
+          component={ProdutosScreen}
           options={{
             tabBarLabel: "Produtos",
 
@@ -96,34 +93,76 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
-    justifyContent: "center",
-
-    alignItems: "center",
+    margin: 10,
   },
 
-  iconTabRound: {
-    width: 60,
+  input: {
+    borderWidth: 1,
 
-    height: 90,
+    borderColor: "#121212",
 
-    borderRadius: 30,
+    height: 40,
 
-    marginBottom: 20,
+    fontSize: 13,
 
+    borderRadius: 8,
+  },
+
+  separator: {
+    marginVertical: 5,
+  },
+
+  button: {
     flexDirection: "row",
 
     alignItems: "center",
 
-    justifyContent: "center",
+    backgroundColor: "#3ea6f2",
 
-    elevation: 6,
+    borderWidth: 0.5,
 
-    shadowColor: "#9C27B0",
+    borderColor: "#fff",
 
-    shadowOffset: { width: 0, height: 2 },
+    height: 40,
 
-    shadowOpacity: 0.2,
+    borderRadius: 5,
 
-    shadowRadius: 5,
+    margin: 5,
+  },
+
+  buttonImageIconStyle: {
+    padding: 10,
+
+    margin: 5,
+
+    height: 25,
+
+    width: 25,
+
+    resizeMode: "stretch",
+  },
+
+  buttonTextStyle: {
+    color: "#fff",
+
+    marginBottom: 4,
+
+    marginLeft: 100,
+
+    fontSize: 20,
+  },
+
+  buttonIconSeparatorStyle: {
+    backgroundColor: "#fff",
+
+    width: 1,
+
+    height: 20,
+  },
+
+  listar: {
+    fontSize: 20,
+
+    textAlign: "center",
   },
 });
